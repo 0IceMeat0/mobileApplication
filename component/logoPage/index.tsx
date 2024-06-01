@@ -2,18 +2,28 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+type RootStackParamList = {
+  GamePage: undefined;
+};
 
-const LogoPage = () => {
-  const navigation = useNavigation();
+type ProfileScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'GamePage'
+>;
+
+const LogoPage: React.FC = () => {
+  const navigation = useNavigation<ProfileScreenNavigationProp>();
+
   return (
     <View style={styles.wrap}>
       <LinearGradient
         colors={['rgba(205, 40, 22, 1)', 'rgba(10, 44, 52, 2)']}
-        start={{ x: 3, y: 1 }}
-        end={{ x: 1, y: 1 }}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
         style={styles.background}
       >
-        <Image style={styles.logo} source={require('../../assets/images/logo.svg')} alt='' />
+        <Image style={styles.logo} source={require('../../assets/images/logoName.png')} alt='' />
         <Text style={styles.text}>Рассказываем о конференциях и других мероприятиях, а также делаем интервью с главными представителями криптосообщества.</Text>
         <View style={styles.container}>
           <TouchableOpacity 

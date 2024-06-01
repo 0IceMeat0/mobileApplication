@@ -7,7 +7,6 @@ import MainPage from '@/component/MainPage';
 import ContactPage from '@/component/contactPage';
 import Header from '@/component/header';
 
-
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +17,7 @@ const MainPageStack = () => {
         name="MainPage"
         component={MainPage}
         options={{
-          header: () => <Header />, // Use the custom header here
+          header: () => <Header />, 
         }}
       />
     </Stack.Navigator>
@@ -32,7 +31,7 @@ const ContactPageStack = () => {
         name="ContactPage"
         component={ContactPage}
         options={{
-          header: () => <Header />, // Use the custom header here
+          header: () => <Header />, 
         }}
       />
     </Stack.Navigator>
@@ -45,12 +44,12 @@ const TabNavigator = () => {
       <Tab.Screen
         name="MainPageStack"
         component={MainPageStack}
-        options={{ title: 'Main Page' }} // Set a title for the tab
+        options={{ title: 'Main Page' }} 
       />
       <Tab.Screen 
         name="ContactPageStack" 
         component={ContactPageStack}
-        options={{ title: 'Contact Page' }} // Set a title for the tab
+        options={{ title: 'Contact Page' }} 
       />
     </Tab.Navigator>
   );
@@ -58,20 +57,23 @@ const TabNavigator = () => {
 
 const App = () => {
   return (
-    <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="MainPage">
-        <Stack.Screen
-          name="MainPage"
-          component={logoPage}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen 
-          name="GamePage" 
-          component={TabNavigator}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+  
+        <NavigationContainer independent={true}>
+          <Stack.Navigator initialRouteName="MainPage">
+            <Stack.Screen
+              name="LogoPage"
+              component={logoPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen 
+              name="GamePage" 
+              component={TabNavigator}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+   
+
   );
 };
 
