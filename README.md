@@ -48,3 +48,14 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+
+<!-- <View style={styles.content}>
+            <TouchableOpacity style={styles.buttonBottomWhite}>
+              <Text style={styles.buttonText}>Рекорды</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonBottom}>
+              <Text style={styles.buttonBottomText}>Секрет</Text>
+            </TouchableOpacity>
+          </View> -->
