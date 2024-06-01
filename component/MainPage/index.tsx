@@ -1,11 +1,14 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import ScrollableScreen from '@/assets/scroll';
 
 const MainPage = () => {
   return (
+    <ScrollableScreen>
     <View style={styles.container}>
       <Text style={styles.text}>MainPage</Text>
     </View>
+    </ScrollableScreen>
   );
 };
 
@@ -19,5 +22,4 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 });
-
 export default MainPage;
