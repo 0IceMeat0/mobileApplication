@@ -1,11 +1,23 @@
 import ScrollableScreen from '@/assets/scroll';
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import Workers from './workes';
+import Slider from './Slide';
+import Vacansies from './vacansies';
+
+
 
 const ContactPage = () => {
-  const rows = Array.from(Array(15).keys()); // количество точек по вертикали
-  const columns = Array.from(Array(5).keys()); // количество точек по горизонтали
+  const rows = Array.from(Array(15).keys());
+  const columns = Array.from(Array(5).keys());
+  const dots =  rows.map((rowIndex) => (
+    <View key={rowIndex} style={styles.row}>
+      {columns.map((colIndex) => (
+        <View key={colIndex} style={styles.dot}></View>
+      ))}
+    </View>
+  ))
+
   return (
     <ScrollableScreen>
       <Text style={styles.mainTitle}>Наша Команда</Text> 
@@ -16,18 +28,19 @@ const ContactPage = () => {
         Рассказываем о конференциях и других мероприятиях, а также делаем интервью с главными представителями криптосообщества.</Text>
         </View>
     <View style={styles.titlePersonal}><View style={styles.triangle}></View><Text>Наши сотрудники = наша семья</Text> 
-    {rows.map((rowIndex) => (
-        <View key={rowIndex} style={styles.row}>
-          {columns.map((colIndex) => (
-            <View key={colIndex} style={styles.dot}></View>
-          ))}
-        </View>
-      ))}
+    {dots}
       </View>
      <Workers />
-
+     <View style={styles.titlePersonal}><View style={styles.triangle}></View><Text>Награды, достижения и сертификаты</Text> 
+   {dots}
+      </View>
+      <Slider />
+      <View style={styles.titlePersonal}><View style={styles.triangle}></View><Text>Наши активные Вакансии</Text> 
+    {dots}
+      </View>
+      <Vacansies />
     </View>
-
+    
     </ScrollableScreen>
   );
 };
@@ -48,7 +61,7 @@ const styles = StyleSheet.create({
     borderWidth: 3, 
     borderColor: 'black',
     padding: 20,
-    margin: 5,
+    margin: 15,
     marginTop: 25,
     marginBottom: 35,
   },
@@ -72,9 +85,9 @@ const styles = StyleSheet.create({
     height: 0,
     backgroundColor: 'transparent',
     borderStyle: 'solid',
-    borderLeftWidth: 15, // половина от ширины треугольника
-    borderRightWidth: 0, // половина от ширины треугольника
-    borderBottomWidth: 15, // высота треугольника
+    borderLeftWidth: 15,
+    borderRightWidth: 0, 
+    borderBottomWidth: 15, 
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
     borderBottomColor: 'red',
