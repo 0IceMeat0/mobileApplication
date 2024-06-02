@@ -1,7 +1,7 @@
 // CustomHeader.js
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 type RootStackParamList = {
   MainPage: undefined;

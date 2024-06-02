@@ -18,8 +18,8 @@ const LogoPage: React.FC = () => {
   return (
     <View style={styles.wrap}>
       <LinearGradient
-        colors={['rgba(205, 40, 22, 1)', 'rgba(10, 44, 52, 2)']}
-        start={{ x: 0, y: 0 }}
+        colors={['rgba(0, 0, 0, 1)', 'rgba(35, 35, 35, 1)', 'rgba(155, 40, 22, 1.5)', 'rgba(35, 35, 35, 1)', 'rgba(0, 0, 0, 1)']}
+        start={{ x: 0, y: 1 }}
         end={{ x: 1, y: 0 }}
         style={styles.background}
       >
