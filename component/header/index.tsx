@@ -33,7 +33,7 @@ const Header = () => {
 const styles = StyleSheet.create({
   headerContainer: {
     height: 80,
-    backgroundColor: '#1B2228', // You can change the background color as per your requirement
+    backgroundColor: '#222222', 
   },
   headerText: {
     color: 'red',
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   stripse: {
     position: 'absolute',
     right: 15,
-    bottom: '35%',
+    bottom: '35%'
   }
 });
 
