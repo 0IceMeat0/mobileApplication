@@ -6,6 +6,7 @@ import logoPage from '@/component/logoPage';
 import MainPage from '@/component/MainPage';
 import ContactPage from '@/component/contactPage';
 import Header from '@/component/header';
+import { StyleSheet } from 'react-native';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -40,11 +41,12 @@ const ContactPageStack = () => {
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator initialRouteName="MainPageStack">
+    <Tab.Navigator initialRouteName="MainPageStack" >
       <Tab.Screen
         name="MainPageStack"
         component={MainPageStack}
         options={{ title: 'Main Page' }} 
+        
       />
       <Tab.Screen 
         name="ContactPageStack" 
@@ -76,5 +78,8 @@ const App = () => {
 
   );
 };
+const styles = StyleSheet.create({
+ 
+})
 
 export default App;

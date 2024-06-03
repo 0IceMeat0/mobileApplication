@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
@@ -12,9 +12,12 @@ type ProfileScreenNavigationProp = NativeStackNavigationProp<
   'GamePage'
 >;
 
+
 const LogoPage: React.FC = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
-
+  useEffect(() => {
+    setTimeout( () => navigation.navigate('GamePage'), 2300)
+    }, [])
   return (
     <View style={styles.wrap}>
       <LinearGradient
@@ -25,14 +28,9 @@ const LogoPage: React.FC = () => {
       >
         <Image style={styles.logo} source={require('../../assets/images/logoName.png')} alt='' />
         <Text style={styles.text}>Рассказываем о конференциях и других мероприятиях, а также делаем интервью с главными представителями криптосообщества.</Text>
+        <Image style={styles.loader} source={require('../../assets/images/loaderWhite1.gif')} alt='' />
         <View style={styles.container}>
-          <TouchableOpacity 
-            style={styles.button}
-            onPress={() => navigation.navigate('GamePage')}
-          >
-            <Text style={styles.buttonText}>Continue</Text>
-          </TouchableOpacity>
-          
+        
         </View>
       </LinearGradient>
     </View>
@@ -58,16 +56,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     textAlign: 'center',
-    marginBottom: 140,
+    marginBottom: 20,
   },
-  button: {
-    width: '90%',
-    backgroundColor: 'white',
-    padding: 15,
-    borderRadius: 18,
-    marginBottom: 45,
-  },
-  
 
   buttonText: {
     fontSize: 22,
@@ -81,6 +71,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
     alignItems: 'center',
+  },
+  loader: {
+
   }
 });
 
